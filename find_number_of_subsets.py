@@ -1,9 +1,16 @@
+def subsets(num):
+    l = len(num)
+    sbsets = []
+    nOfSubsets = 2**l 
+    for i in range(nOfSubsets):
+        subset = []
+        for j in range(l):
+            if i & (2**j) != 0:
+                subset.append(num[j])
+        sbsets.append(subset)
+    return sbsets
 
 
-
-
-# string = input("Enter a string: ")
-# l = len(string)
-# num_of_subsets = 2 ** l 
-
-# for i in range(0, num_of_subsets-1):
+num = "123"
+ans = subsets(num)
+print(ans)
